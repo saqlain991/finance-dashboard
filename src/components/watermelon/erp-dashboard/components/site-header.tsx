@@ -43,7 +43,7 @@ export default function SiteHeader() {
         <header className="flex h-18 shrink-0 items-center justify-between border-b border-neutral-100 dark:border-neutral-800 px-7 max-md:px-5 bg-white/50 dark:bg-zinc-900/50 backdrop-blur-xl sticky top-0 z-50">
             <div className="flex items-center gap-4">
                 <SidebarTrigger className="hover:bg-neutral-100 dark:hover:bg-neutral-800 rounded-lg transition-colors" />
-                <Separator orientation="vertical" className="h-6 bg-neutral-100 dark:border-neutral-800 hidden sm:block" />
+                {/* <Separator orientation="vertical" className="h-6 bg-neutral-100 dark:border-neutral-800 hidden sm:block" /> */}
                 <Breadcrumb className="hidden sm:block">
                     <BreadcrumbList>
                         <BreadcrumbItem>
@@ -69,15 +69,15 @@ export default function SiteHeader() {
 
                 <div className="flex items-center gap-2">
                     <Popover>
-                        <PopoverTrigger 
-                          render={
-                            <Button variant="ghost" size="icon" className="size-10 rounded-xl text-neutral-500 hover:text-[#0CC8A8] hover:bg-neutral-50 dark:hover:bg-neutral-800 transition-all border border-transparent hover:border-neutral-100 dark:hover:border-neutral-700 relative">
-                                <Mail className="size-5" />
-                                {MESSAGES.some(m => !m.read) && (
-                                    <span className="absolute top-2.5 right-2.5 size-2 rounded-full bg-[#0CC8A8] border-2 border-white dark:border-neutral-900 shadow-sm shadow-[#0CC8A8]/50" />
-                                )}
-                            </Button>
-                          }
+                        <PopoverTrigger
+                            render={
+                                <Button variant="ghost" size="icon" className="size-10 rounded-xl text-neutral-500 hover:text-[#0CC8A8] hover:bg-neutral-50 dark:hover:bg-neutral-800 transition-all border border-transparent hover:border-neutral-100 dark:hover:border-neutral-700 relative">
+                                    <Mail className="size-5" />
+                                    {MESSAGES.some(m => !m.read) && (
+                                        <span className="absolute top-2.5 right-2.5 size-2 rounded-full bg-[#0CC8A8] border-2 border-white dark:border-neutral-900 shadow-sm shadow-[#0CC8A8]/50" />
+                                    )}
+                                </Button>
+                            }
                         />
                         <PopoverContent className="w-80 p-0 rounded-2xl bg-white dark:bg-[#1A1A1E] border border-neutral-100 dark:border-neutral-800 shadow-2xl" align="end">
                             <div className="p-4 border-b border-neutral-100 dark:border-neutral-800 flex justify-between items-center">
@@ -109,15 +109,15 @@ export default function SiteHeader() {
                     </Popover>
 
                     <Popover>
-                        <PopoverTrigger 
-                          render={
-                            <Button variant="ghost" size="icon" className="size-10 rounded-xl text-neutral-500 hover:text-[#0CC8A8] hover:bg-neutral-50 dark:hover:bg-neutral-800 transition-all relative border border-transparent hover:border-neutral-100 dark:hover:border-neutral-700">
-                                <Bell className="size-5" />
-                                {NOTIFICATIONS.some(n => !n.read) && (
-                                    <span className="absolute top-2.5 right-2.5 size-2 rounded-full bg-rose-500 border-2 border-white dark:border-neutral-900 shadow-sm shadow-rose-500/50" />
-                                )}
-                            </Button>
-                          }
+                        <PopoverTrigger
+                            render={
+                                <Button variant="ghost" size="icon" className="size-10 rounded-xl text-neutral-500 hover:text-[#0CC8A8] hover:bg-neutral-50 dark:hover:bg-neutral-800 transition-all relative border border-transparent hover:border-neutral-100 dark:hover:border-neutral-700">
+                                    <Bell className="size-5" />
+                                    {NOTIFICATIONS.some(n => !n.read) && (
+                                        <span className="absolute top-2.5 right-2.5 size-2 rounded-full bg-rose-500 border-2 border-white dark:border-neutral-900 shadow-sm shadow-rose-500/50" />
+                                    )}
+                                </Button>
+                            }
                         />
                         <PopoverContent className="w-80 p-0 rounded-2xl bg-white dark:bg-[#1A1A1E] border border-neutral-100 dark:border-neutral-800 shadow-2xl" align="end">
                             <div className="p-4 border-b border-neutral-100 dark:border-neutral-800 flex justify-between items-center">
@@ -150,31 +150,29 @@ export default function SiteHeader() {
                         </PopoverContent>
                     </Popover>
 
-                    <Separator orientation="vertical" className="h-6 bg-neutral-100 dark:border-neutral-800 mx-2" />
                     <ThemeToggle />
                 </div>
 
-                <Separator orientation="vertical" className="h-6 bg-neutral-100 dark:border-neutral-800" />
 
                 <DropdownMenu>
                     <DropdownMenuTrigger
-                      render={
-                        <button type="button" className="flex items-center gap-3 p-1 pr-3 rounded-xl hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-all active:scale-95 border border-transparent hover:border-neutral-100 dark:hover:border-neutral-700 outline-none">
-                            <Avatar className="size-8 rounded-lg shadow-sm">
-                                <AvatarImage src={currentProfile.avatar || ""} />
-                                <AvatarFallback className="bg-[#0CC8A8] text-white text-xs font-black">
-                                    {currentProfile.initials}
-                                </AvatarFallback>
-                            </Avatar>
-                            <div className="text-left hidden sm:block">
-                                <div className="text-[10px] font-black text-neutral-400 uppercase tracking-widest leading-none mb-1">Active Profile</div>
-                                <div className="text-xs font-bold text-neutral-900 dark:text-white leading-none flex items-center gap-1.5">
-                                    {currentProfile.name.split(" ")[0]}
-                                    <ChevronDown className="size-3 text-neutral-400" />
+                        render={
+                            <button type="button" className="flex items-center gap-3 p-1 pr-3 rounded-xl hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-all active:scale-95 border border-transparent hover:border-neutral-100 dark:hover:border-neutral-700 outline-none">
+                                <Avatar className="size-8 rounded-lg shadow-sm">
+                                    <AvatarImage src={currentProfile.avatar || ""} />
+                                    <AvatarFallback className="bg-[#0CC8A8] text-white text-xs font-black">
+                                        {currentProfile.initials}
+                                    </AvatarFallback>
+                                </Avatar>
+                                <div className="text-left hidden sm:block">
+                                    <div className="text-[10px] font-black text-neutral-400 uppercase tracking-widest leading-none mb-1">Active Profile</div>
+                                    <div className="text-xs font-bold text-neutral-900 dark:text-white leading-none flex items-center gap-1.5">
+                                        {currentProfile.name.split(" ")[0]}
+                                        <ChevronDown className="size-3 text-neutral-400" />
+                                    </div>
                                 </div>
-                            </div>
-                        </button>
-                      }
+                            </button>
+                        }
                     />
                     <DropdownMenuContent align="end" className="w-72 p-2 rounded-2xl border-neutral-100 dark:border-neutral-800 shadow-xl overflow-hidden bg-white dark:bg-[#121214]">
                         <DropdownMenuGroup>
