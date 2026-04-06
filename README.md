@@ -2,7 +2,7 @@
 
 Finexy is a next-generation Enterprise Resource Planning (ERP) dashboard designed for high-density financial management and real-time data orchestration. Built with a premium glassmorphic aesthetic and robust Role-Based Access Control (RBAC), it provides a state-of-the-art interface for managing complex financial segments.
 
-![Finexy Dashboard](../public/homepage.png)
+![Finexy Dashboard](../homepage.png)
 
 ## 🚀 Core Features
 
